@@ -1,1 +1,47 @@
 /* Write your CSS here */
+.bg-container {
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+.bg-light-mode-card {
+    background-color:#ffffff;
+    
+}
+.bg-dark-mode-card{
+    background-color:#000000;
+}
+.heading {
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 3.0rem;
+    margin: 20px 0;
+    text-align: center;
+}
+.dark-mode{
+    color: #ffffff;
+}
+.button{
+    padding:10px 25px;
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    transition: 0.5s;
+}
+/* .button:hover{
+    background-color:#466;
+    color: #ffffff;
+} */
