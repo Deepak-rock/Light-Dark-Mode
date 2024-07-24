@@ -3,7 +3,7 @@ import {Component} from 'react'
 import './index.css'
 
 class LightDarkMode extends Component {
-  state = {changeMode: true}
+  state = {changeMode: false}
 
   buttonFunc = () => {
     this.setState(prevState => {
@@ -14,28 +14,22 @@ class LightDarkMode extends Component {
 
   render() {
     const {changeMode} = this.state
-    let response
-    if (changeMode === true) {
-      response = (
-        <div className="container bg-light-mode-card">
-          <h1 className="heading">Click To Change Mode</h1>
-          <button type="button" className="button" onClick={this.buttonFunc}>
-            Dark Mode
-          </button>
-        </div>
-      )
-    } else {
-      response = (
-        <div className="container bg-dark-mode-card">
-          <h1 className="heading dark-mode">Click To Change Mode</h1>
-          <button type="button" className="button" onClick={this.buttonFunc}>
-            Light Mode
-          </button>
-        </div>
-      )
-    }
+    const bgModeClassName = changeMode
+      ? 'bg-dark-mode-card'
+      : 'bg-light-mode-card'
+    const buttonText = changeMode ? 'Dark Mode' : 'Light Mode'
+    const headingColor = changeMode ? 'dark-mode' : 'light-mode'
 
-    return <div className="bg-container">{response}</div>
+    return (
+      <div className="bg-container">
+        <div className={`container ${bgModeClassName}`}>
+          <h1 className={`heading ${headingColor}`}>Click To Change Mode</h1>
+          <button type="button" className="button" onClick={this.buttonFunc}>
+            {buttonText}
+          </button>
+        </div>
+      </div>
+    )
   }
 }
 
